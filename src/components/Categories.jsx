@@ -1,31 +1,50 @@
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
-import { useNavigation } from '@react-navigation/native'
 
-export default function Categories({categoryList}) {
+const Categories = ({categoryList}) => {
 
-  const navigation=useNavigation();
   return (
-    <View className="mt-3">
-        <Text className="font-bold text-[20px]">Categories</Text>
+    <View style={style.container}>
+        <Text style={style.heading}>Categories</Text>
         <FlatList
           data={categoryList}
           numColumns={4}
           renderItem={({item,index})=>(
             <TouchableOpacity 
-            onPress={()=>navigation.navigate('item-list',{
-              category:item.name
-            })}
-            className="flex-1 items-center 
-            justify-center p-2 border-[1px] border-blue-200 
-            m-1 h-[80px] rounded-lg bg-blue-50 ">
-              <Image source={{uri:item.icon}}
-              className="w-[35px] h-[35px] "
-              />
-             <Text className="text-[12px] mt-1">{item.name}</Text>
+            onPress={()=> {}}
+            style={style.listitemcontainer}
+            >
+             <Text style={style.itemtext}>{item.name}</Text>
             </TouchableOpacity>
           )}
         />
     </View>
   )
 }
+
+export default Categories
+const style = StyleSheet.create({
+  container: {
+    marginTop:10,
+  },
+  heading:{
+    fontWeight:'bold',
+  fontSize:18,
+  color:'black',
+  marginBottom:4
+  },
+  listitemcontainer:{
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center',
+    padding:4,
+    borderWidth:2,
+    borderRadius:10,
+    marginHorizontal:4,
+  },
+  itemtext:{
+    fontSize:12,
+    marginTop:4,
+    color:'black'
+  }
+})

@@ -1,4 +1,44 @@
 {
+    "slide":[
+        {
+            "id": 1,
+            "image": "https://www.angara.in/cdn/shop/files/Lab-Grown-Hero-Desktop_1.jpg"
+        },
+        {
+            "id": 2,
+            "image": "https://s3.ap-south-1.amazonaws.com/assets.vedicgems.com/banners/promotional/MicrosoftTeams-image+(41).png"
+        },
+
+        {
+            "id": 3,
+            "image": "https://www.angara.in/cdn/shop/files/Lab-Grown-Hero-Desktop_1.jpg"
+        },
+
+        {
+            "id": 4,
+            "image": "https://www.angara.in/cdn/shop/files/Lab-Grown-Hero-Desktop_1.jpg"
+        }
+
+
+    ],
+    "categories":[
+        {
+            "id":1,
+            "name":"Rings"
+        },
+        {
+            "id":2,
+            "name":"Earrings"
+        },
+        {
+            "id":3,
+            "name":"Necklace"
+        },
+        {
+            "id":4,
+            "name":"GIA collection"
+        }
+    ],
     "products": [
         {
             "id": 1,

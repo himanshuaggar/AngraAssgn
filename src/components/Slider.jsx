@@ -1,18 +1,17 @@
-import { View, Text, FlatList, Image } from 'react-native'
+import { View, Text, FlatList, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
-export default function Slider({sliderList}) {
+const Slider=({sliderList}) =>{
   return (
-    <View className="mt-5">
+    <View style={style.container}>
         <FlatList
             data={sliderList}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             renderItem={({item,index})=>(
                 <View>
-                    <Image source={{uri:item?.image}} 
-                        className="h-[160px] w-[330px] mr-3 rounded-lg
-                        object-cover"
+                    <Image source={{uri:item.image}} 
+                        style={style.image}
                     />
                 </View>
             )}
@@ -20,3 +19,18 @@ export default function Slider({sliderList}) {
     </View>
   )
 }
+
+const style = StyleSheet.create({
+    container:{
+        marginTop:10,
+    },
+    image:{
+        height:200,
+        width:500,
+        marginRight:10,
+        borderRadius:10,
+        objectFit:'cover',
+    }
+})
+
+export default Slider;

@@ -14,8 +14,13 @@ import Tags from "../components/Tags";
 import ProductCard from "../components/ProductCard";
 import data from "../data/data.json";
 import { useNavigation } from "@react-navigation/native";
+import Slider from "../components/Slider";
+import Categories from "../components/Categories";
 
 const HomeScreen = () => {
+
+  const [sliderList,setSliderList]=useState(data.slide);
+  const [categoryList,setCategoryList]=useState(data.categories);
   const [products, setProducts] = useState(data.products);
   const navigation = useNavigation();
   const handleProductDetails = (item) => {
@@ -35,6 +40,7 @@ const HomeScreen = () => {
       })
     );
   };
+  console.log(sliderList)
 
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
@@ -58,6 +64,8 @@ const HomeScreen = () => {
                 </View>
               </View>
             </>
+            <Slider sliderList={sliderList}/>
+            <Categories categoryList={categoryList} />
             <Tags />
           </>
         }
